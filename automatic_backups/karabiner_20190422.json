@@ -14,32 +14,6 @@
                     "basic.to_if_held_down_threshold_milliseconds": 500
                 },
                 "rules": [
-                        {
-                            "description": "Change caps_lock key to fn/esc.",
-                            "manipulators": [
-                                {
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "fn"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "escape"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
                     {
                         "description": "Change fn+tab to caps_lock.",
                         "manipulators": [
@@ -110,6 +84,30 @@
                                         "modifiers": [
                                             "left_shift"
                                         ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Change shift+backspace to delete.",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_forward"
                                     }
                                 ],
                                 "type": "basic"
@@ -810,19 +808,6 @@
                     "ignore": true,
                     "manipulate_caps_lock_led": true,
                     "simple_modifications": []
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 615,
-                        "vendor_id": 1452
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": true,
-                    "simple_modifications": []
                 }
             ],
             "fn_function_keys": [
@@ -925,16 +910,7 @@
             ],
             "name": "Macbook like KP v60",
             "selected": true,
-            "simple_modifications": [
-                {
-                    "from": {
-                        "key_code": "fn"
-                    },
-                    "to": {
-                        "key_code": "right_control"
-                    }
-                }
-            ],
+            "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
                 "country_code": 0,
