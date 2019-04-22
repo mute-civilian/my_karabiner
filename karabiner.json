@@ -15,7 +15,31 @@
                 },
                 "rules": [
                     {
-                        "description": "Change caps_lock key to fn/esc.",
+                        "description": "right_shift+; to :",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "semicolon",
+                                        "modifiers": [
+                                            "right_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "caps_lock to fn/esc.",
                         "manipulators": [
                             {
                                 "from": {
@@ -41,7 +65,7 @@
                         ]
                     },
                     {
-                        "description": "Change fn+tab to caps_lock.",
+                        "description": "fn+tab to caps_lock.",
                         "manipulators": [
                             {
                                 "from": {
@@ -65,7 +89,7 @@
                         ]
                     },
                     {
-                        "description": "Change fn+J to `.",
+                        "description": "fn+J to `.",
                         "manipulators": [
                             {
                                 "from": {
@@ -90,7 +114,7 @@
                         ]
                     },
                     {
-                        "description": "Change fn+j to ~.",
+                        "description": "fn+j to ~.",
                         "manipulators": [
                             {
                                 "from": {
@@ -117,7 +141,7 @@
                         ]
                     },
                     {
-                        "description": "Change fn+f to delete.",
+                        "description": "fn+f to delete.",
                         "manipulators": [
                             {
                                 "from": {
@@ -141,7 +165,7 @@
                         ]
                     },
                     {
-                        "description": "Change fn+r to backspace.",
+                        "description": "fn+r to backspace.",
                         "manipulators": [
                             {
                                 "from": {
@@ -165,7 +189,7 @@
                         ]
                     },
                     {
-                        "description": "Change fn+g to end.",
+                        "description": "fn+g to end.",
                         "manipulators": [
                             {
                                 "from": {
@@ -189,7 +213,7 @@
                         ]
                     },
                     {
-                        "description": "Change fn+t to home.",
+                        "description": "fn+t to home.",
                         "manipulators": [
                             {
                                 "from": {
@@ -213,7 +237,7 @@
                         ]
                     },
                     {
-                        "description": "Change fn+h to page_down.",
+                        "description": "fn+h to page_down.",
                         "manipulators": [
                             {
                                 "from": {
@@ -237,7 +261,7 @@
                         ]
                     },
                     {
-                        "description": "Change fn+y to page_up.",
+                        "description": "fn+y to page_up.",
                         "manipulators": [
                             {
                                 "from": {
@@ -261,7 +285,7 @@
                         ]
                     },
                     {
-                        "description": "Change fn+u to screenshot of selected area.",
+                        "description": "fn+u to screenshot of selected area. Requires changes to sys config",
                         "manipulators": [
                             {
                                 "from": {
@@ -285,7 +309,7 @@
                         ]
                     },
                     {
-                        "description": "Change fn+awsd to arrow keys",
+                        "description": "fn+awsd to arrow keys",
                         "manipulators": [
                             {
                                 "from": {
@@ -366,7 +390,7 @@
                         ]
                     },
                     {
-                        "description": "arrow keys to mission controls",
+                        "description": "arrow keys to mission controls. May require changes to sys config",
                         "manipulators": [
                             {
                                 "from": {
