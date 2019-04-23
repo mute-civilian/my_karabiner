@@ -15,25 +15,23 @@
                 },
                 "rules": [
                     {
-                        "description": "enter to control/enter.",
+                        "description": "right_shift+; to :",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "return_or_enter",
+                                    "key_code": "semicolon",
                                     "modifiers": {
-                                        "optional": [
-                                            "any"
+                                        "mandatory": [
+                                            "right_control"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_control"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "return_or_enter"
+                                        "key_code": "semicolon",
+                                        "modifiers": [
+                                            "right_shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -91,7 +89,7 @@
                         ]
                     },
                     {
-                        "description": "fn+J/j to ~/`.",
+                        "description": "fn+J to `.",
                         "manipulators": [
                             {
                                 "from": {
@@ -112,7 +110,12 @@
                                     }
                                 ],
                                 "type": "basic"
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "description": "fn+j to ~.",
+                        "manipulators": [
                             {
                                 "from": {
                                     "key_code": "j",
@@ -138,7 +141,7 @@
                         ]
                     },
                     {
-                        "description": "fn+f/r to delete/backspace.",
+                        "description": "fn+f to delete.",
                         "manipulators": [
                             {
                                 "from": {
@@ -158,7 +161,12 @@
                                     }
                                 ],
                                 "type": "basic"
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "description": "fn+r to backspace.",
+                        "manipulators": [
                             {
                                 "from": {
                                     "key_code": "r",
@@ -181,7 +189,7 @@
                         ]
                     },
                     {
-                        "description": "fn+g/t/h/y to end/home/page_up/page_down.",
+                        "description": "fn+g to end.",
                         "manipulators": [
                             {
                                 "from": {
@@ -201,7 +209,12 @@
                                     }
                                 ],
                                 "type": "basic"
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "description": "fn+t to home.",
+                        "manipulators": [
                             {
                                 "from": {
                                     "key_code": "t",
@@ -220,7 +233,12 @@
                                     }
                                 ],
                                 "type": "basic"
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "description": "fn+h to page_down.",
+                        "manipulators": [
                             {
                                 "from": {
                                     "key_code": "h",
@@ -239,7 +257,12 @@
                                     }
                                 ],
                                 "type": "basic"
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "description": "fn+y to page_up.",
+                        "manipulators": [
                             {
                                 "from": {
                                     "key_code": "y",
@@ -255,30 +278,6 @@
                                 "to": [
                                     {
                                         "key_code": "page_up"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "fn+backspace to delete",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "delete_or_backspace",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "fn"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "delete_forward"
                                     }
                                 ],
                                 "type": "basic"
@@ -904,16 +903,7 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
-                    "simple_modifications": [
-                        {
-                            "from": {
-                                "key_code": "fn"
-                            },
-                            "to": {
-                                "key_code": "left_control"
-                            }
-                        }
-                    ]
+                    "simple_modifications": []
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
@@ -940,28 +930,6 @@
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
                     "simple_modifications": []
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 615,
-                        "vendor_id": 76
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": true,
-                    "simple_modifications": [
-                        {
-                            "from": {
-                                "key_code": "fn"
-                            },
-                            "to": {
-                                "key_code": "left_control"
-                            }
-                        }
-                    ]
                 }
             ],
             "fn_function_keys": [
@@ -1062,9 +1030,26 @@
                     }
                 }
             ],
-            "name": "Nathan's Profile",
+            "name": "Macbook like KP v60",
             "selected": true,
-            "simple_modifications": [],
+            "simple_modifications": [
+                {
+                    "from": {
+                        "key_code": "fn"
+                    },
+                    "to": {
+                        "key_code": "left_control"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "right_shift"
+                    },
+                    "to": {
+                        "key_code": "right_control"
+                    }
+                }
+            ],
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
                 "country_code": 0,
