@@ -11,10 +11,184 @@
                     "basic.simultaneous_threshold_milliseconds": 50,
                     "basic.to_delayed_action_delay_milliseconds": 500,
                     "basic.to_if_alone_timeout_milliseconds": 1000,
-                    "basic.to_if_held_down_threshold_milliseconds": 500,
-                    "mouse_motion_to_scroll.speed": 100
+                    "basic.to_if_held_down_threshold_milliseconds": 500
                 },
                 "rules": [
+                    {
+                        "description": "caps_lock -> fn/esc.",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "fn"
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "fn+space toggles numpadWASD arrow Keys toggled by Capslock",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "wasd_arrow_keys_mode",
+                                        "type": "variable_unless",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "wasd_arrow_keys_mode",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "wasd_arrow_keys_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "wasd_arrow_keys_mode",
+                                            "value":  0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "wasd_arrow_keys_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "0",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "wasd_arrow_keys_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "9",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "wasd_arrow_keys_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "8",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "wasd_arrow_keys_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "7",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
                     {
                         "description": "enter -> control/enter.",
                         "manipulators": [
@@ -42,324 +216,15 @@
                         ]
                     },
                     {
-                        "description": "caps_lock -> hyper/esc.",
+                        "description": "fn+left_command enables mouse control",
                         "manipulators": [
                             {
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_command",
-                                        "modifiers": [
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ]
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "escape"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "hyper+space toggles numpad",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "spacebar",
-                                    "modifiers": {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "k",
+                                "modifiers": {
                                         "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "numpad_mode",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "name": "numpad_mode",
-                                        "type": "variable_unless",
-                                        "value": 1
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "spacebar",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "numpad_mode",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "name": "numpad_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "q",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "4"
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "name": "numpad_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "w",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "5"
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "name": "numpad_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "e",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "6"
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "name": "numpad_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "a",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "7"
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "name": "numpad_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "s",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "8"
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "name": "numpad_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "d",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "9"
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "name": "numpad_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "x",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "0"
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "name": "numpad_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "z",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "period"
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "name": "numpad_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "c",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "hyphen"
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "name": "numpad_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "hyper+left_command enables mouse control",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option",
+                                            "fn",
                                             "left_command"
                                         ],
                                         "optional": [
@@ -373,194 +238,169 @@
                                             "y": -1536
                                         }
                                     }
-                                ],
-                                "type": "basic"
+                                ]
                             },
                             {
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option",
-                                            "left_command"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "mouse_key": {
-                                            "x": -1536
-                                        }
-                                    }
+                            "type": "basic",
+                            "from": {
+                                "key_code": "h",
+                                "modifiers": {
+                                "mandatory": [
+                                    "fn",
+                                    "left_command"
                                 ],
-                                "type": "basic"
+                                "optional": [
+                                    "any"
+                                ]
+                                }
+                            },
+                            "to": [
+                                {
+                                "mouse_key": {
+                                    "x": -1536
+                                }
+                                }
+                            ]
                             },
                             {
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option",
-                                            "left_command"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "mouse_key": {
-                                            "y": 1536
-                                        }
-                                    }
+                            "type": "basic",
+                            "from": {
+                                "key_code": "j",
+                                "modifiers": {
+                                "mandatory": [
+                                    "fn",
+                                    "left_command"
                                 ],
-                                "type": "basic"
+                                "optional": [
+                                    "any"
+                                ]
+                                }
+                            },
+                            "to": [
+                                {
+                                "mouse_key": {
+                                    "y": 1536
+                                }
+                                }
+                            ]
                             },
                             {
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option",
-                                            "left_command"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "mouse_key": {
-                                            "x": 1536
-                                        }
-                                    }
+                            "type": "basic",
+                            "from": {
+                                "key_code": "l",
+                                "modifiers": {
+                                "mandatory": [
+                                    "fn",
+                                    "left_command"
                                 ],
-                                "type": "basic"
+                                "optional": [
+                                    "any"
+                                ]
+                                }
+                            },
+                            "to": [
+                                {
+                                "mouse_key": {
+                                    "x": 1536
+                                }
+                                }
+                            ]
                             },
                             {
-                                "from": {
-                                    "key_code": "u",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option",
-                                            "left_command"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "mouse_key": {
-                                            "vertical_wheel": -32
-                                        }
-                                    }
+                            "type": "basic",
+                            "from": {
+                                "key_code": "u",
+                                "modifiers": {
+                                "mandatory": [
+                                    "fn",
+                                    "left_command"
                                 ],
-                                "type": "basic"
+                                "optional": [
+                                    "any"
+                                ]
+                                }
+                            },
+                            "to": [
+                                {
+                                "mouse_key": {
+                                    "vertical_wheel": -32
+                                }
+                                }
+                            ]
                             },
                             {
-                                "from": {
-                                    "key_code": "i",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option",
-                                            "left_command"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "mouse_key": {
-                                            "vertical_wheel": 32
-                                        }
-                                    }
+                            "type": "basic",
+                            "from": {
+                                "key_code": "i",
+                                "modifiers": {
+                                "mandatory": [
+                                    "fn",
+                                    "left_command"
                                 ],
-                                "type": "basic"
+                                "optional": [
+                                    "any"
+                                ]
+                                }
+                            },
+                            "to": [
+                                {
+                                "mouse_key": {
+                                    "vertical_wheel": 32
+                                }
+                                }
+                            ]
                             },
                             {
-                                "from": {
-                                    "key_code": "n",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option",
-                                            "left_command"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "pointing_button": "button1"
-                                    }
+                            "type": "basic",
+                            "from": {
+                                "key_code": "n",
+                                "modifiers": {
+                                "mandatory": [
+                                    "fn",
+                                    "left_command"
                                 ],
-                                "type": "basic"
+                                "optional": [
+                                    "any"
+                                ]
+                                }
+                            },
+                            "to": [
+                                {
+                                "pointing_button": "button1"
+                                }
+                            ]
                             },
                             {
-                                "from": {
-                                    "key_code": "m",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option",
-                                            "left_command"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "pointing_button": "button2"
-                                    }
+                            "type": "basic",
+                            "from": {
+                                "key_code": "m",
+                                "modifiers": {
+                                "mandatory": [
+                                    "fn",
+                                    "left_command"
                                 ],
-                                "type": "basic"
+                                "optional": [
+                                    "any"
+                                ]
+                                }
+                            },
+                            "to": [
+                                {
+                                "pointing_button": "button2"
+                                }
+                            ]
                             }
                         ]
                     },
                     {
-                        "description": "hyper+tab -> caps_lock.",
+                        "description": "fn+tab -> caps_lock.",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "tab",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
+                                            "fn"
                                         ],
                                         "optional": [
                                             "any"
@@ -577,18 +417,15 @@
                         ]
                     },
                     {
-                        "description": "hyper+j/J -> ~/`.",
+                        "description": "fn+J/j -> ~/`.",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option",
-                                            "left_shift"
+                                            "fn",
+                                            "shift"
                                         ],
                                         "optional": [
                                             "any"
@@ -607,10 +444,7 @@
                                     "key_code": "j",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
+                                            "fn"
                                         ],
                                         "optional": [
                                             "any"
@@ -630,17 +464,14 @@
                         ]
                     },
                     {
-                        "description": "hyper+f/r -> delete/backspace.",
+                        "description": "fn+f/r -> delete/backspace.",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "f",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
+                                            "fn"
                                         ],
                                         "optional": [
                                             "any"
@@ -659,10 +490,7 @@
                                     "key_code": "r",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
+                                            "fn"
                                         ],
                                         "optional": [
                                             "any"
@@ -679,17 +507,14 @@
                         ]
                     },
                     {
-                        "description": "hyper+g/t/h/y -> end/home/page_up/page_down.",
+                        "description": "fn+g/t/h/y -> end/home/page_up/page_down.",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "g",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
+                                            "fn"
                                         ],
                                         "optional": [
                                             "any"
@@ -708,10 +533,7 @@
                                     "key_code": "t",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
+                                            "fn"
                                         ],
                                         "optional": [
                                             "any"
@@ -730,10 +552,7 @@
                                     "key_code": "h",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
+                                            "fn"
                                         ],
                                         "optional": [
                                             "any"
@@ -752,10 +571,7 @@
                                     "key_code": "y",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
+                                            "fn"
                                         ],
                                         "optional": [
                                             "any"
@@ -772,17 +588,14 @@
                         ]
                     },
                     {
-                        "description": "hyper+backspace -> delete",
+                        "description": "fn+backspace -> delete",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "delete_or_backspace",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
+                                            "fn"
                                         ],
                                         "optional": [
                                             "any"
@@ -799,17 +612,14 @@
                         ]
                     },
                     {
-                        "description": "hyper+u takes selected screenshot. Requires change to system configuration",
+                        "description": "fn+u takes selected screenshot. Requires change to system configuration",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "u",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
+                                            "fn"
                                         ],
                                         "optional": [
                                             "any"
@@ -826,17 +636,14 @@
                         ]
                     },
                     {
-                        "description": "hyper+awsd -> arrow keys",
+                        "description": "fn+awsd -> arrow keys",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "a",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
+                                            "fn"
                                         ],
                                         "optional": [
                                             "any"
@@ -855,10 +662,7 @@
                                     "key_code": "s",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
+                                            "fn"
                                         ],
                                         "optional": [
                                             "any"
@@ -877,10 +681,7 @@
                                     "key_code": "w",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
+                                            "fn"
                                         ],
                                         "optional": [
                                             "any"
@@ -899,10 +700,7 @@
                                     "key_code": "d",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
+                                            "fn"
                                         ],
                                         "optional": [
                                             "any"
@@ -1314,6 +1112,14 @@
                     "simple_modifications": [
                         {
                             "from": {
+                                "key_code": "caps_lock"
+                            },
+                            "to": {
+                                "key_code": "fn"
+                            }
+                        },
+                        {
+                            "from": {
                                 "key_code": "fn"
                             },
                             "to": {
@@ -1362,6 +1168,14 @@
                     "simple_modifications": [
                         {
                             "from": {
+                                "key_code": "caps_lock"
+                            },
+                            "to": {
+                                "key_code": "fn"
+                            }
+                        },
+                        {
+                            "from": {
                                 "key_code": "fn"
                             },
                             "to": {
@@ -1382,6 +1196,14 @@
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
                     "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "caps_lock"
+                            },
+                            "to": {
+                                "key_code": "fn"
+                            }
+                        }
                     ]
                 },
                 {
