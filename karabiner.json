@@ -15,6 +15,183 @@
                 },
                 "rules": [
                     {
+                        "description": "fn+left_command enables mouse control",
+                        "manipulators": [
+                            {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "k",
+                                "modifiers": {
+                                        "mandatory": [
+                                            "fn",
+                                            "left_command"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "mouse_key": {
+                                            "y": -1536
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "h",
+                                "modifiers": {
+                                "mandatory": [
+                                    "fn",
+                                    "left_command"
+                                ],
+                                "optional": [
+                                    "any"
+                                ]
+                                }
+                            },
+                            "to": [
+                                {
+                                "mouse_key": {
+                                    "x": -1536
+                                }
+                                }
+                            ]
+                            },
+                            {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "j",
+                                "modifiers": {
+                                "mandatory": [
+                                    "fn",
+                                    "left_command"
+                                ],
+                                "optional": [
+                                    "any"
+                                ]
+                                }
+                            },
+                            "to": [
+                                {
+                                "mouse_key": {
+                                    "y": 1536
+                                }
+                                }
+                            ]
+                            },
+                            {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "l",
+                                "modifiers": {
+                                "mandatory": [
+                                    "fn",
+                                    "left_command"
+                                ],
+                                "optional": [
+                                    "any"
+                                ]
+                                }
+                            },
+                            "to": [
+                                {
+                                "mouse_key": {
+                                    "x": 1536
+                                }
+                                }
+                            ]
+                            },
+                            {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "u",
+                                "modifiers": {
+                                "mandatory": [
+                                    "fn",
+                                    "left_command"
+                                ],
+                                "optional": [
+                                    "any"
+                                ]
+                                }
+                            },
+                            "to": [
+                                {
+                                "mouse_key": {
+                                    "vertical_wheel": -32
+                                }
+                                }
+                            ]
+                            },
+                            {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "i",
+                                "modifiers": {
+                                "mandatory": [
+                                    "fn",
+                                    "left_command"
+                                ],
+                                "optional": [
+                                    "any"
+                                ]
+                                }
+                            },
+                            "to": [
+                                {
+                                "mouse_key": {
+                                    "vertical_wheel": 32
+                                }
+                                }
+                            ]
+                            },
+                            {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "n",
+                                "modifiers": {
+                                "mandatory": [
+                                    "fn",
+                                    "left_command"
+                                ],
+                                "optional": [
+                                    "any"
+                                ]
+                                }
+                            },
+                            "to": [
+                                {
+                                "pointing_button": "button1"
+                                }
+                            ]
+                            },
+                            {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "m",
+                                "modifiers": {
+                                "mandatory": [
+                                    "fn",
+                                    "left_command"
+                                ],
+                                "optional": [
+                                    "any"
+                                ]
+                                }
+                            },
+                            "to": [
+                                {
+                                "pointing_button": "button2"
+                                }
+                            ]
+                            }
+                        ]
+                    },
+                    {
                         "description": "enter -> control/enter.",
                         "manipulators": [
                             {
