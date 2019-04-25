@@ -911,7 +911,7 @@
                         ]
                     },
                     {
-                        "description": "arrow keys trigger mission controls. Requires changes to system configuration",
+                        "description": "arrow keys trigger mission controls.",
                         "manipulators": [
                             {
                                 "from": {
@@ -943,9 +943,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "down_arrow",
+                                        "key_code": "f3",
                                         "modifiers": [
-                                            "left_control"
+                                            "left_command"
                                         ]
                                     }
                                 ],
