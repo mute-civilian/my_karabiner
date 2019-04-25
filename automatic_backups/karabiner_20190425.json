@@ -76,13 +76,6 @@
                         "description": "hyper+space toggles hyper_mode, which enables numpad and mouse mode",
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "name": "hyper_mode",
-                                        "type": "variable_unless",
-                                        "value": 1
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "spacebar",
                                     "modifiers": {
@@ -105,16 +98,16 @@
                                         }
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
                                         "name": "hyper_mode",
-                                        "type": "variable_if",
+                                        "type": "variable_unless",
                                         "value": 1
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
                                 "from": {
                                     "key_code": "spacebar",
                                     "modifiers": {
@@ -137,6 +130,13 @@
                                         }
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "name": "hyper_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
@@ -145,13 +145,6 @@
                         "description": "numpad settings",
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "name": "hyper_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "u",
                                     "modifiers": {
@@ -165,9 +158,6 @@
                                         "key_code": "4"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
                                         "name": "hyper_mode",
@@ -175,6 +165,9 @@
                                         "value": 1
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
                                 "from": {
                                     "key_code": "i",
                                     "modifiers": {
@@ -188,9 +181,6 @@
                                         "key_code": "5"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
                                         "name": "hyper_mode",
@@ -198,6 +188,9 @@
                                         "value": 1
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
                                 "from": {
                                     "key_code": "o",
                                     "modifiers": {
@@ -211,9 +204,6 @@
                                         "key_code": "6"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
                                         "name": "hyper_mode",
@@ -221,6 +211,9 @@
                                         "value": 1
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
@@ -234,9 +227,6 @@
                                         "key_code": "1"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
                                         "name": "hyper_mode",
@@ -244,6 +234,9 @@
                                         "value": 1
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
@@ -257,9 +250,6 @@
                                         "key_code": "2"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
                                         "name": "hyper_mode",
@@ -267,6 +257,9 @@
                                         "value": 1
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": {
@@ -280,9 +273,6 @@
                                         "key_code": "3"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
                                         "name": "hyper_mode",
@@ -290,6 +280,9 @@
                                         "value": 1
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
                                 "from": {
                                     "key_code": "comma",
                                     "modifiers": {
@@ -303,9 +296,6 @@
                                         "key_code": "0"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
                                         "name": "hyper_mode",
@@ -313,6 +303,9 @@
                                         "value": 1
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
                                 "from": {
                                     "key_code": "9",
                                     "modifiers": {
@@ -332,6 +325,13 @@
                                         ]
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "name": "hyper_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
@@ -340,13 +340,6 @@
                         "description": "mouse mode settings",
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "name": "hyper_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "w",
                                     "modifiers": {
@@ -362,9 +355,6 @@
                                         }
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
                                         "name": "hyper_mode",
@@ -372,6 +362,9 @@
                                         "value": 1
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
                                 "from": {
                                     "key_code": "a",
                                     "modifiers": {
@@ -387,9 +380,6 @@
                                         }
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
                                         "name": "hyper_mode",
@@ -397,6 +387,9 @@
                                         "value": 1
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
                                 "from": {
                                     "key_code": "s",
                                     "modifiers": {
@@ -412,9 +405,6 @@
                                         }
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
                                         "name": "hyper_mode",
@@ -422,6 +412,9 @@
                                         "value": 1
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
                                 "from": {
                                     "key_code": "d",
                                     "modifiers": {
@@ -437,9 +430,6 @@
                                         }
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
                                         "name": "hyper_mode",
@@ -447,6 +437,9 @@
                                         "value": 1
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
                                 "from": {
                                     "key_code": "r",
                                     "modifiers": {
@@ -462,9 +455,6 @@
                                         }
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
                                         "name": "hyper_mode",
@@ -472,6 +462,9 @@
                                         "value": 1
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
                                 "from": {
                                     "key_code": "f",
                                     "modifiers": {
@@ -487,9 +480,6 @@
                                         }
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
                                         "name": "hyper_mode",
@@ -497,6 +487,9 @@
                                         "value": 1
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
                                 "from": {
                                     "key_code": "q",
                                     "modifiers": {
@@ -510,9 +503,6 @@
                                         "pointing_button": "button1"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
                                         "name": "hyper_mode",
@@ -520,6 +510,9 @@
                                         "value": 1
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
                                 "from": {
                                     "key_code": "e",
                                     "modifiers": {
@@ -531,6 +524,13 @@
                                 "to": [
                                     {
                                         "pointing_button": "button2"
+                                    }
+                                ],
+                                "conditions": [
+                                    {
+                                        "name": "hyper_mode",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
                                 ],
                                 "type": "basic"
@@ -1121,7 +1121,8 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
-                    "simple_modifications": []
+                    "simple_modifications": [
+                    ]
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
@@ -1147,7 +1148,16 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
-                    "simple_modifications": []
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "fn"
+                            },
+                            "to": {
+                                "key_code": "left_control"
+                            }
+                        }
+                    ]
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
@@ -1186,7 +1196,16 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
-                    "simple_modifications": []
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "fn"
+                            },
+                            "to": {
+                                "key_code": "left_control"
+                            }
+                        }
+                    ]
                 }
             ],
             "fn_function_keys": [
