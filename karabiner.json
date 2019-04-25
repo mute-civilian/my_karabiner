@@ -73,7 +73,7 @@
                         ]
                     },
                     {
-                        "description": "hyper+space toggles numpad",
+                        "description": "hyper+space toggles hyper_mode, which enables numpad and mouse mode",
                         "manipulators": [
                             {
                                 "from": {
@@ -93,14 +93,14 @@
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "numpad_mode",
+                                            "name": "hyper_mode",
                                             "value": 1
                                         }
                                     }
                                 ],
                                 "conditions": [
                                     {
-                                        "name": "numpad_mode",
+                                        "name": "hyper_mode",
                                         "type": "variable_unless",
                                         "value": 1
                                     }
@@ -125,23 +125,28 @@
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "numpad_mode",
+                                            "name": "hyper_mode",
                                             "value": 0
                                         }
                                     }
                                 ],
                                 "conditions": [
                                     {
-                                        "name": "numpad_mode",
+                                        "name": "hyper_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
                                 "type": "basic"
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "description": "numpad settings",
+                        "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "q",
+                                    "key_code": "u",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -155,7 +160,7 @@
                                 ],
                                 "conditions": [
                                     {
-                                        "name": "numpad_mode",
+                                        "name": "hyper_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -164,7 +169,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "w",
+                                    "key_code": "i",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -178,7 +183,7 @@
                                 ],
                                 "conditions": [
                                     {
-                                        "name": "numpad_mode",
+                                        "name": "hyper_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -187,7 +192,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "e",
+                                    "key_code": "o",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -201,7 +206,7 @@
                                 ],
                                 "conditions": [
                                     {
-                                        "name": "numpad_mode",
+                                        "name": "hyper_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -210,7 +215,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "a",
+                                    "key_code": "j",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -219,12 +224,12 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "7"
+                                        "key_code": "1"
                                     }
                                 ],
                                 "conditions": [
                                     {
-                                        "name": "numpad_mode",
+                                        "name": "hyper_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -233,7 +238,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "s",
+                                    "key_code": "k",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -242,12 +247,12 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "8"
+                                        "key_code": "2"
                                     }
                                 ],
                                 "conditions": [
                                     {
-                                        "name": "numpad_mode",
+                                        "name": "hyper_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -256,7 +261,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "d",
+                                    "key_code": "l",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -265,12 +270,12 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "9"
+                                        "key_code": "3"
                                     }
                                 ],
                                 "conditions": [
                                     {
-                                        "name": "numpad_mode",
+                                        "name": "hyper_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -279,7 +284,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "x",
+                                    "key_code": "comma",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -293,7 +298,7 @@
                                 ],
                                 "conditions": [
                                     {
-                                        "name": "numpad_mode",
+                                        "name": "hyper_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -302,8 +307,11 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "z",
+                                    "key_code": "9",
                                     "modifiers": {
+                                        "mandatory": [
+                                            "left_shift"
+                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -311,35 +319,15 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "period"
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "name": "numpad_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "c",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
+                                        "key_code": "9",
+                                        "modifiers": [
+                                            "left_shift"
                                         ]
                                     }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "hyphen"
-                                    }
                                 ],
                                 "conditions": [
                                     {
-                                        "name": "numpad_mode",
+                                        "name": "hyper_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -349,72 +337,8 @@
                         ]
                     },
                     {
-                        "description": "hyper+m enables mouse mode",
+                        "description": "mouse mode settings",
                         "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "m",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "mouse_mode",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "name": "mouse_mode",
-                                        "type": "variable_unless",
-                                        "value": 1
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "m",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "mouse_mode",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "name": "mouse_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "type": "basic"
-                            },
                             {
                                 "from": {
                                     "key_code": "w",
@@ -433,7 +357,7 @@
                                 ],
                                 "conditions": [
                                     {
-                                        "name": "mouse_mode",
+                                        "name": "hyper_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -458,7 +382,7 @@
                                 ],
                                 "conditions": [
                                     {
-                                        "name": "mouse_mode",
+                                        "name": "hyper_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -483,7 +407,7 @@
                                 ],
                                 "conditions": [
                                     {
-                                        "name": "mouse_mode",
+                                        "name": "hyper_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -508,7 +432,7 @@
                                 ],
                                 "conditions": [
                                     {
-                                        "name": "mouse_mode",
+                                        "name": "hyper_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -517,7 +441,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "k",
+                                    "key_code": "r",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -533,7 +457,7 @@
                                 ],
                                 "conditions": [
                                     {
-                                        "name": "mouse_mode",
+                                        "name": "hyper_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -542,7 +466,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "j",
+                                    "key_code": "f",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -558,7 +482,7 @@
                                 ],
                                 "conditions": [
                                     {
-                                        "name": "mouse_mode",
+                                        "name": "hyper_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -567,7 +491,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "spacebar",
+                                    "key_code": "q",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -581,7 +505,7 @@
                                 ],
                                 "conditions": [
                                     {
-                                        "name": "mouse_mode",
+                                        "name": "hyper_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -590,7 +514,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "l",
+                                    "key_code": "e",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -604,7 +528,7 @@
                                 ],
                                 "conditions": [
                                     {
-                                        "name": "mouse_mode",
+                                        "name": "hyper_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
