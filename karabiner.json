@@ -350,6 +350,37 @@
                                 "from": {
                                     "key_code": "w",
                                     "modifiers": {
+                                        "mandatory": [
+                                            "right_shift",
+                                            "right_option",
+                                            "right_command",
+                                            "right_control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "mouse_key": {
+                                            "y": -2536
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "w",
+                                    "modifiers": {
                                         "optional": [
                                             "any"
                                         ]
@@ -359,6 +390,37 @@
                                     {
                                         "mouse_key": {
                                             "y": -1536
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_shift",
+                                            "right_option",
+                                            "right_command",
+                                            "right_control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "mouse_key": {
+                                            "x": -3036
                                         }
                                     }
                                 ],
@@ -400,6 +462,37 @@
                                 "from": {
                                     "key_code": "s",
                                     "modifiers": {
+                                        "mandatory": [
+                                            "right_shift",
+                                            "right_option",
+                                            "right_command",
+                                            "right_control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "mouse_key": {
+                                            "y": 3036
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
                                         "optional": [
                                             "any"
                                         ]
@@ -409,6 +502,37 @@
                                     {
                                         "mouse_key": {
                                             "y": 1536
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_shift",
+                                            "right_option",
+                                            "right_command",
+                                            "right_control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "mouse_key": {
+                                            "x": 2536
                                         }
                                     }
                                 ],
