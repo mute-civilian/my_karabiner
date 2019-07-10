@@ -6,6 +6,7 @@
     },
     "profiles": [
         {
+            "name": "Nathan's Profile",
             "complex_modifications": {
                 "parameters": {
                     "basic.simultaneous_threshold_milliseconds": 50,
@@ -2286,7 +2287,6 @@
                     }
                 }
             ],
-            "name": "Nathan's Profile",
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
@@ -2300,6 +2300,7 @@
             }
         },
         {
+            "name": "Normie",
             "complex_modifications": {
                 "parameters": {
                     "basic.simultaneous_threshold_milliseconds": 50,
@@ -2409,7 +2410,6 @@
                     }
                 }
             ],
-            "name": "Normie",
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
