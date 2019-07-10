@@ -6,7 +6,6 @@
     },
     "profiles": [
         {
-            "name": "Nathan's Profile",
             "complex_modifications": {
                 "parameters": {
                     "basic.simultaneous_threshold_milliseconds": 50,
@@ -50,18 +49,24 @@
                                     "key_code": "caps_lock",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_command",
-                                        "modifiers": [
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ]
+                                        "set_variable": {
+                                            "name": "hyper_pressed",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "hyper_pressed",
+                                            "value": 0
+                                        }
                                     }
                                 ],
                                 "to_if_alone": [
@@ -74,20 +79,21 @@
                         ]
                     },
                     {
-                        "description": "hyper+t hotkeys terminal",
+                        "description": "hyper+q hotkeys terminal",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
-                                    "key_code": "t",
+                                    "key_code": "q",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -109,19 +115,18 @@
                                         "name": "hyper_mode",
                                         "type": "variable_unless",
                                         "value": 1
+                                    },
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
                                 ],
                                 "from": {
                                     "key_code": "spacebar",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -141,19 +146,18 @@
                                         "name": "hyper_mode",
                                         "type": "variable_if",
                                         "value": 1
+                                    },
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
                                 ],
                                 "from": {
                                     "key_code": "spacebar",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -184,7 +188,7 @@
                                     "key_code": "u",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -207,7 +211,7 @@
                                     "key_code": "i",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -230,7 +234,7 @@
                                     "key_code": "o",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -253,7 +257,7 @@
                                     "key_code": "j",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -276,7 +280,7 @@
                                     "key_code": "k",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -299,7 +303,7 @@
                                     "key_code": "l",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -322,7 +326,7 @@
                                     "key_code": "comma",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -345,7 +349,7 @@
                                     "key_code": "7",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -368,7 +372,7 @@
                                     "key_code": "8",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -391,7 +395,7 @@
                                     "key_code": "9",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -417,7 +421,7 @@
                                             "left_shift"
                                         ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -442,19 +446,18 @@
                                         "name": "hyper_mode",
                                         "type": "variable_if",
                                         "value": 1
+                                    },
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
                                 ],
                                 "from": {
                                     "key_code": "w",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_shift",
-                                            "right_option",
-                                            "right_command",
-                                            "right_control"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -479,7 +482,7 @@
                                     "key_code": "w",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -498,19 +501,18 @@
                                         "name": "hyper_mode",
                                         "type": "variable_if",
                                         "value": 1
+                                    },
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
                                 ],
                                 "from": {
                                     "key_code": "a",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_shift",
-                                            "right_option",
-                                            "right_command",
-                                            "right_control"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -535,7 +537,7 @@
                                     "key_code": "a",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -554,19 +556,18 @@
                                         "name": "hyper_mode",
                                         "type": "variable_if",
                                         "value": 1
+                                    },
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
                                 ],
                                 "from": {
                                     "key_code": "s",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_shift",
-                                            "right_option",
-                                            "right_command",
-                                            "right_control"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -591,7 +592,7 @@
                                     "key_code": "s",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -610,19 +611,18 @@
                                         "name": "hyper_mode",
                                         "type": "variable_if",
                                         "value": 1
+                                    },
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
                                 ],
                                 "from": {
                                     "key_code": "d",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_shift",
-                                            "right_option",
-                                            "right_command",
-                                            "right_control"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -647,7 +647,7 @@
                                     "key_code": "d",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -672,7 +672,7 @@
                                     "key_code": "r",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -697,7 +697,7 @@
                                     "key_code": "f",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -722,7 +722,7 @@
                                     "key_code": "q",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -745,40 +745,13 @@
                                     "key_code": "e",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "pointing_button": "button2"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "hyper+tab -> caps_lock.",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "tab",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "caps_lock"
                                     }
                                 ],
                                 "type": "basic"
@@ -796,7 +769,7 @@
                                             "left_control"
                                         ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -816,7 +789,7 @@
                                             "left_shift"
                                         ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -833,21 +806,21 @@
                         ]
                     },
                     {
-                        "description": "hyper+j/J -> ~/`.",
+                        "description": "hyper+j/k -> ~/`.",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
-                                    "key_code": "j",
+                                    "key_code": "k",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option",
-                                            "left_shift"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -859,17 +832,18 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -889,17 +863,18 @@
                         "description": "hyper+f/r -> delete/backspace.",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "f",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -911,17 +886,18 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "r",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -938,17 +914,18 @@
                         "description": "hyper+g/t/h/y -> end/home/page_up/page_down.",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "g",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -960,17 +937,18 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "t",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -982,17 +960,18 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1004,17 +983,18 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "y",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1031,17 +1011,18 @@
                         "description": "hyper+number -> F keys",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "1",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1053,17 +1034,18 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "2",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1075,17 +1057,18 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "3",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1097,17 +1080,18 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "4",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1119,17 +1103,18 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "5",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1141,17 +1126,18 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "6",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1163,17 +1149,18 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "7",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1185,17 +1172,18 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "8",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1207,17 +1195,18 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "9",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1229,17 +1218,18 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "0",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1251,17 +1241,18 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "hyphen",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1273,17 +1264,18 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "equal_sign",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1300,17 +1292,18 @@
                         "description": "hyper+backspace -> delete",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "delete_or_backspace",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1327,17 +1320,18 @@
                         "description": "hyper+u takes selected screenshot.",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "u",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1358,17 +1352,18 @@
                         "description": "hyper+awsd -> arrow keys",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "a",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1380,17 +1375,18 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "s",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1402,17 +1398,18 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "w",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1424,17 +1421,18 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "d",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift",
-                                            "right_control",
-                                            "right_option"
-                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1455,7 +1453,7 @@
                                     "key_code": "up_arrow",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1474,7 +1472,7 @@
                                     "key_code": "down_arrow",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1493,7 +1491,7 @@
                                     "key_code": "left_arrow",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1512,7 +1510,7 @@
                                     "key_code": "right_arrow",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1547,7 +1545,7 @@
                                             "left_command"
                                         ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -2172,18 +2170,18 @@
                         },
                         {
                             "from": {
-                                "key_code": "right_option"
+                                "key_code": "right_command"
                             },
                             "to": {
-                                "key_code": "right_command"
+                                "key_code": "right_option"
                             }
                         },
                         {
                             "from": {
-                                "key_code": "right_command"
+                                "key_code": "right_option"
                             },
                             "to": {
-                                "key_code": "right_option"
+                                "key_code": "right_command"
                             }
                         }
                     ]
@@ -2287,6 +2285,7 @@
                     }
                 }
             ],
+            "name": "Nathan's Profile",
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
@@ -2300,7 +2299,6 @@
             }
         },
         {
-            "name": "Normie",
             "complex_modifications": {
                 "parameters": {
                     "basic.simultaneous_threshold_milliseconds": 50,
@@ -2410,6 +2408,7 @@
                     }
                 }
             ],
+            "name": "Normie",
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
