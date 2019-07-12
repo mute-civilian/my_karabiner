@@ -806,6 +806,57 @@
                         ]
                     },
                     {
+                        "description": "right_control moves focus to menu bar (requires system config)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_control",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "m",
+                                        "modifiers": [
+                                            "right_control",
+                                            "right_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "right_option cycles Amethyst layout",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_option",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "spacebar",
+                                        "modifiers": [
+                                            "right_control",
+                                            "right_shift",
+                                            "right_option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "hyper+q hotkeys terminal",
                         "manipulators": [
                             {
