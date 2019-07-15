@@ -79,7 +79,7 @@
                         ]
                     },
                     {
-                        "description": "hyper+space toggles hyper_mode, which enables numpad and mouse mode",
+                        "description": "hyper+tab toggles hyper_mode, which enables numpad and mouse mode",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -95,7 +95,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "spacebar",
+                                    "key_code": "tab",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock"
@@ -129,7 +129,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "spacebar",
+                                    "key_code": "tab",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock"
@@ -2124,6 +2124,30 @@
                     {
                         "description": "escape opens Alfred",
                         "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.runningwithcrayons.Alfred"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "escape",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
                             {
                                 "from": {
                                     "key_code": "escape",
