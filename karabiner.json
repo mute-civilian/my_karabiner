@@ -136,6 +136,9 @@
                                             "name": "hyper_mode",
                                             "value": 1
                                         }
+                                    },
+                                    {
+                                        "key_code": "caps_lock"
                                     }
                                 ],
                                 "type": "basic"
@@ -167,6 +170,9 @@
                                             "name": "hyper_mode",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "key_code": "caps_lock"
                                     }
                                 ],
                                 "type": "basic"
@@ -2059,6 +2065,11 @@
                         "manipulators": [
                             {
                                 "from": {
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    },
                                     "simultaneous": [
                                         {
                                             "key_code": "open_bracket"
@@ -2066,19 +2077,14 @@
                                         {
                                             "key_code": "p"
                                         }
-                                    ],
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
+                                    ]
                                 },
                                 "to": [
                                     {
-                                    "key_code": "open_bracket",
-                                    "modifiers": [
-                                        "left_shift"
-                                    ]
+                                        "key_code": "open_bracket",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
