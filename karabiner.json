@@ -737,15 +737,19 @@
                         ]
                     },
                     {
-                        "description": "control+space -> -/_ (kebab/snake case)",
+                        "description": "hyper+space -> -/_ (kebab/snake case)",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "spacebar",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ],
                                         "optional": [
                                             "caps_lock"
                                         ]
@@ -759,12 +763,18 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "spacebar",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_control",
-                                            "left_shift"
+                                            "shift"
                                         ],
                                         "optional": [
                                             "caps_lock"
@@ -776,57 +786,6 @@
                                         "key_code": "hyphen",
                                         "modifiers": [
                                             "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "right_control moves focus to menu bar (requires system config)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_control",
-                                    "modifiers": {
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "m",
-                                        "modifiers": [
-                                            "right_control",
-                                            "right_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "right_option cycles Amethyst layout",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_option",
-                                    "modifiers": {
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "spacebar",
-                                        "modifiers": [
-                                            "right_control",
-                                            "right_shift",
-                                            "right_option"
                                         ]
                                     }
                                 ],
@@ -1608,6 +1567,57 @@
                                         "key_code": "right_arrow",
                                         "modifiers": [
                                             "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "right_control moves focus to menu bar (requires system config)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_control",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "m",
+                                        "modifiers": [
+                                            "right_control",
+                                            "right_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "right_option cycles Amethyst layout",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_option",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "spacebar",
+                                        "modifiers": [
+                                            "right_control",
+                                            "right_shift",
+                                            "right_option"
                                         ]
                                     }
                                 ],
@@ -2651,8 +2661,7 @@
                     "basic.to_if_held_down_threshold_milliseconds": 500,
                     "mouse_motion_to_scroll.speed": 100
                 },
-                "rules": 
-                [
+                "rules": [
                     {
                         "description": "chord p[ -> {",
                         "manipulators": [
