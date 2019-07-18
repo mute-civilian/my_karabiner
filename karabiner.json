@@ -1600,16 +1600,23 @@
                         ]
                     },
                     {
-                        "description": "right_option cycles Amethyst layout",
+                        "description": "right_option+right_control cycles Amethyst layout",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "right_option",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "any"
                                         ]
-                                    }
+                                    },
+                                    "simultaneous": [
+                                        {
+                                            "key_code": "right_option"
+                                        },
+                                        {
+                                            "key_code": "right_control"
+                                        }
+                                    ]
                                 },
                                 "to": [
                                     {
