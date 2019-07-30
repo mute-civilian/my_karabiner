@@ -79,7 +79,7 @@
                         ]
                     },
                     {
-                        "description": "spacebar recognizes kebab/snake case mode",
+                        "description": "spacebar recognizes kebab/snake case mode. Outside modes left shift snakes and right shift kebabs.",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -118,6 +118,47 @@
                                 "from": {
                                     "key_code": "spacebar",
                                     "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "hyphen"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "hyphen",
+                                        "modifiers": [
+                                            "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_shift"
+                                        ],
                                         "optional": [
                                             "any"
                                         ]
