@@ -889,10 +889,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "down_arrow",
-                                        "modifiers": [
-                                            "control"
-                                        ]
+                                        "key_code": "f11"
                                     }
                                 ],
                                 "type": "basic"
