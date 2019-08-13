@@ -107,7 +107,7 @@
                         ]
                     },
                     {
-                        "description": "Left shift + space snakes and right shift + space kebabs.",
+                        "description": "left_shift+space snakes and right_shift+space kebabs.",
                         "manipulators": [
                             {
                                 "from": {
@@ -955,11 +955,11 @@
                         ]
                     },
                     {
-                        "description": "right_control moves focus to menu bar (requires system config)",
+                        "description": "escape moves focus to menu bar (requires system config)",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "right_control",
+                                    "key_code": "escape",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock"
@@ -1012,7 +1012,7 @@
                         ]
                     },
                     {
-                        "description": "left_option+left_control cycles Amethyst layout",
+                        "description": "chording left_option+left_control cycles Amethyst layout",
                         "manipulators": [
                             {
                                 "from": {
@@ -1045,7 +1045,7 @@
                         ]
                     },
                     {
-                        "description": "left + right shift enables capslock",
+                        "description": "chording both shifts toggles capslock",
                         "manipulators": [
                             {
                                 "from": {
@@ -1878,40 +1878,7 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
-                    "simple_modifications": [
-                        {
-                            "from": {
-                                "key_code": "left_command"
-                            },
-                            "to": {
-                                "key_code": "left_option"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "left_option"
-                            },
-                            "to": {
-                                "key_code": "left_command"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "right_command"
-                            },
-                            "to": {
-                                "key_code": "right_option"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "right_option"
-                            },
-                            "to": {
-                                "key_code": "right_command"
-                            }
-                        }
-                    ]
+                    "simple_modifications": []
                 }
             ],
             "fn_function_keys": [
