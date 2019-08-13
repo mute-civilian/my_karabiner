@@ -742,7 +742,10 @@
                                     "key_code": "a",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "caps_lock",
+                                            "control",
+                                            "option",
+                                            "command"
                                         ]
                                     }
                                 },
@@ -765,7 +768,10 @@
                                     "key_code": "s",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "caps_lock",
+                                            "control",
+                                            "option",
+                                            "command"
                                         ]
                                     }
                                 },
@@ -788,7 +794,10 @@
                                     "key_code": "w",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "caps_lock",
+                                            "control",
+                                            "option",
+                                            "command"
                                         ]
                                     }
                                 },
@@ -811,7 +820,10 @@
                                     "key_code": "d",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "caps_lock",
+                                            "command",
+                                            "control",
+                                            "option"
                                         ]
                                     }
                                 },
