@@ -428,46 +428,76 @@
                         ]
                     },
                     {
-                        "description": "left_shift+space snakes and right_shift+space kebabs.",
+                        "description": "chording both shifts toggles capslock",
                         "manipulators": [
                             {
                                 "to": [
                                     {
-                                        "modifiers": [
-                                            "shift"
-                                        ],
-                                        "key_code": "hyphen"
+                                        "key_code": "caps_lock"
                                     }
                                 ],
                                 "from": {
                                     "modifiers": {
-                                        "mandatory": [
-                                            "left_shift"
-                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    },
+                                    "simultaneous": [
+                                        {
+                                            "key_code": "left_shift"
+                                        },
+                                        {
+                                            "key_code": "right_shift"
+                                        }
+                                    ]
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "left_shift -> shift/snake. right_shift -> shift/kebab",
+                        "manipulators": [
+                            {
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "hyphen",
+                                        "modifiers": "shift"
+                                    }
+                                ],
+                                "to": [
+                                    {
+                                        "key_code": "left_shift"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
                                         "optional": [
                                             "caps_lock"
                                         ]
                                     },
-                                    "key_code": "spacebar"
+                                    "key_code": "left_shift"
                                 },
                                 "type": "basic"
                             },
                             {
-                                "to": [
+                                "to_if_alone": [
                                     {
                                         "key_code": "hyphen"
                                     }
                                 ],
+                                "to": [
+                                    {
+                                        "key_code": "right_shift"
+                                    }
+                                ],
                                 "from": {
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_shift"
-                                        ],
                                         "optional": [
                                             "caps_lock"
                                         ]
                                     },
-                                    "key_code": "spacebar"
+                                    "key_code": "right_shift"
                                 },
                                 "type": "basic"
                             }
@@ -1366,34 +1396,6 @@
                         ]
                     },
                     {
-                        "description": "chording both shifts toggles capslock",
-                        "manipulators": [
-                            {
-                                "to": [
-                                    {
-                                        "key_code": "caps_lock"
-                                    }
-                                ],
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "left_shift"
-                                        },
-                                        {
-                                            "key_code": "right_shift"
-                                        }
-                                    ]
-                                },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Switch numbers and symbols",
                         "manipulators": [
                             {
@@ -1897,6 +1899,47 @@
                                         ]
                                     },
                                     "key_code": "close_bracket"
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Switch backslash and pipe",
+                        "manipulators": [
+                            {
+                                "to": [
+                                    {
+                                        "key_code": "backslash"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    },
+                                    "key_code": "backslash"
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "modifiers": "shift",
+                                        "key_code": "backslash"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    },
+                                    "key_code": "backslash"
                                 },
                                 "type": "basic"
                             }
