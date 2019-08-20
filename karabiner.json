@@ -998,7 +998,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "m",
+                                        "key_code": "s",
                                         "modifiers": [
                                             "right_control",
                                             "right_shift"
@@ -1458,7 +1458,7 @@
                                             "key_code": "f"
                                         },
                                         {
-                                            "key_code": "d"
+                                            "key_code": "q"
                                         }
                                     ]
                                 },
@@ -1481,7 +1481,7 @@
                                             "key_code": "f"
                                         },
                                         {
-                                            "key_code": "v"
+                                            "key_code": "w"
                                         }
                                     ]
                                 },
@@ -1504,7 +1504,7 @@
                                             "key_code": "f"
                                         },
                                         {
-                                            "key_code": "r"
+                                            "key_code": "a"
                                         }
                                     ]
                                 },
@@ -1527,7 +1527,7 @@
                                             "key_code": "f"
                                         },
                                         {
-                                            "key_code": "g"
+                                            "key_code": "s"
                                         }
                                     ]
                                 },
