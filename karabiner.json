@@ -70,11 +70,37 @@
                         ]
                     },
                     {
-                        "description": "caps_lock -> hyper/esc.",
+                        "description": "caps_lock -> option/esc.",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "caps_lock",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_option"
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "space -> hyper/space.",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "spacebar",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -99,7 +125,7 @@
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "key_code": "escape"
+                                        "key_code": "spacebar"
                                     }
                                 ],
                                 "type": "basic"
@@ -1994,11 +2020,11 @@
                         ]
                     },
                     {
-                        "description": "caps_lock -> hyper/esc.",
+                        "description": "space -> hyper/space.",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "caps_lock",
+                                    "key_code": "space_bar",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -2023,7 +2049,7 @@
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "key_code": "escape"
+                                        "key_code": "space_bar"
                                     }
                                 ],
                                 "type": "basic"
