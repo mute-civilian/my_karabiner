@@ -161,12 +161,15 @@
                         ]
                     },
                     {
-                        "description": "left_shift -> shift/snake. right_shift -> shift/kebab",
+                        "description": "right_shift -> shift/kebab. left_shift/right_shift snakes",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "left_shift",
+                                    "key_code": "right_shift",
                                     "modifiers": {
+                                        "mandatory": [
+                                            "left_shift"
+                                        ],
                                         "optional": [
                                             "caps_lock"
                                         ]
@@ -174,7 +177,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_shift"
+                                        "key_code": "right_shift"
                                     }
                                 ],
                                 "to_if_alone": [
