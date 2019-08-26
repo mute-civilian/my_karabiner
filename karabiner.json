@@ -70,11 +70,11 @@
                         ]
                     },
                     {
-                        "description": "caps_lock -> option/esc.",
+                        "description": "tab -> option/tab.",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "caps_lock",
+                                    "key_code": "tab",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -88,7 +88,7 @@
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "key_code": "escape"
+                                        "key_code": "tab"
                                     }
                                 ],
                                 "type": "basic"
@@ -96,11 +96,11 @@
                         ]
                     },
                     {
-                        "description": "space -> hyper/space.",
+                        "description": "caps_lock -> hyper/esc.",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "spacebar",
+                                    "key_code": "caps_lock",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -125,7 +125,7 @@
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "key_code": "spacebar"
+                                        "key_code": "escape"
                                     }
                                 ],
                                 "type": "basic"
@@ -1447,6 +1447,47 @@
                         ]
                     },
                     {
+                        "description": "Switch single and double quote",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "quote",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "quote"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "quote",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "quote",
+                                        "modifiers": "shift"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "chord jump to programs",
                         "manipulators": [
                             {
@@ -2020,11 +2061,11 @@
                         ]
                     },
                     {
-                        "description": "space -> hyper/space.",
+                        "description": "caps_lock -> hyper/esc.",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "space_bar",
+                                    "key_code": "caps_lock",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -2049,7 +2090,7 @@
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "key_code": "space_bar"
+                                        "key_code": "escape"
                                     }
                                 ],
                                 "type": "basic"
