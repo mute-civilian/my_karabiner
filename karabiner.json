@@ -44,6 +44,32 @@
                         ]
                     },
                     {
+                        "description": "right_command -> command/enter.",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_gui",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_gui"
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "return_or_enter"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "enter -> control/enter.",
                         "manipulators": [
                             {
