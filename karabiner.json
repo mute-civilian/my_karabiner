@@ -1120,7 +1120,7 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "volume_decrement"
+                            "consumer_key_code": "display_brightness_decrement"
                         }
                     ]
                 },
@@ -1130,7 +1130,7 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "volume_increment"
+                            "consumer_key_code": "display_brightness_increment"
                         }
                     ]
                 },
@@ -1140,7 +1140,7 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "mute"
+                            "apple_vendor_keyboard_key_code": "mission_control"
                         }
                     ]
                 },
@@ -1150,7 +1150,7 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "display_brightness_decrement"
+                            "apple_vendor_keyboard_key_code": "spotlight"
                         }
                     ]
                 },
@@ -1160,7 +1160,7 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "display_brightness_increment"
+                            "consumer_key_code": "mute"
                         }
                     ]
                 },
@@ -1170,7 +1170,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "illumination_decrement"
+                            "apple_vendor_keyboard_key_code": "launchpad"
                         }
                     ]
                 },
@@ -1180,7 +1180,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "illumination_increment"
+                            "consumer_key_code": "rewind"
                         }
                     ]
                 },
@@ -1190,7 +1190,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "f8"
+                            "consumer_key_code": "play_or_pause"
                         }
                     ]
                 },
@@ -1200,7 +1200,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "f9"
+                            "consumer_key_code": "fast_forward"
                         }
                     ]
                 },
@@ -1210,7 +1210,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "f10"
+                            "consumer_key_code": "mute"
                         }
                     ]
                 },
@@ -1220,7 +1220,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "f11"
+                            "consumer_key_code": "volume_decrement"
                         }
                     ]
                 },
@@ -1230,7 +1230,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "f12"
+                            "consumer_key_code": "volume_increment"
                         }
                     ]
                 }
